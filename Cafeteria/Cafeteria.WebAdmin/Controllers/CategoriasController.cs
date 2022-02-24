@@ -34,9 +34,20 @@ namespace Cafeteria.WebAdmin.Controllers
         [HttpPost] // MANDA DE REGRESO
         public ActionResult Crear(Categoria categoria)
         {
-            _categoriasBL.GuardarCategoria(categoria);
+            if (ModelState.IsValid)
+            {
+                if(categoria.Descripcion != categoria.Descripcion.Trim())
+                {
+                    ModelState.AddModelError("Descripcion", "La Descripcion no debe tener espacios al inicio o al final");
+                    return View(categoria);
+                }
 
-            return RedirectToAction("Index"); ;
+                _categoriasBL.GuardarCategoria(categoria);
+
+                return RedirectToAction("Index"); 
+            }
+
+            return View(categoria);
         }
 
         public ActionResult Editar(int id)
@@ -49,9 +60,20 @@ namespace Cafeteria.WebAdmin.Controllers
         [HttpPost]
         public ActionResult Editar(Categoria categoria)
         {
-            _categoriasBL.GuardarCategoria(categoria);
+            if (ModelState.IsValid)
+            {
+                if (categoria.Descripcion != categoria.Descripcion.Trim())
+                {
+                    ModelState.AddModelError("Descripcion", "La Descripcion no debe tener espacios al inicio o al final");
+                    return View(categoria);
+                }
 
-            return RedirectToAction("Index");
+                _categoriasBL.GuardarCategoria(categoria);
+
+                return RedirectToAction("Index");
+            }
+
+            return View(categoria);
         }
 
         public ActionResult Detalle(int id)

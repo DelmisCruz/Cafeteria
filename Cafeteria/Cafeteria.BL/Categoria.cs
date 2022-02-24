@@ -11,7 +11,7 @@ namespace Cafeteria.BL
     {
         public int Id { get; set; }
 
-        //[Required(ErrorMessage = "Ingrese la categoria")]
+        [Required(ErrorMessage = "Ingrese una categoria")]
         public string Descripcion { get; set; }
     }
 }
