@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace Cafeteria.WebAdmin.Controllers
 {
+
     public class ProductosController : Controller
     {
         ProductosBL _productosBL;
@@ -30,6 +31,7 @@ namespace Cafeteria.WebAdmin.Controllers
         {
             var nuevoProducto = new Producto();
             var categorias = _categoriasBL.ObtenerCategorias();
+
 
             ViewBag.CategoriaId =
                 new SelectList(categorias, "Id", "Descripcion");
@@ -78,7 +80,7 @@ namespace Cafeteria.WebAdmin.Controllers
         }
 
         [HttpPost]
-        public ActionResult Editar(Producto producto)
+        public ActionResult Editar(Producto producto, HttpPostedFileBase imagen)
         {
             if (ModelState.IsValid)
             {
@@ -86,6 +88,11 @@ namespace Cafeteria.WebAdmin.Controllers
                 {
                     ModelState.AddModelError("CategoriaId", "Seleccione una categoria");
                     return View(producto);
+                }
+
+                if (imagen != null)
+                {
+                    producto.UrlImagen = GuardarImagen(imagen);
                 }
 
                 _productosBL.GuardarProducto(producto);

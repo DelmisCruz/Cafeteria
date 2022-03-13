@@ -11,18 +11,21 @@ namespace Cafeteria.BL
     {
         public int Id { get; set; }
 
-        //[Required(ErrorMessage = "Ingrese el nombre del cliente")]
-        //[MinLength(3, ErrorMessage = "Ingrese mínimo 3 caracteres")]
+        [Required(ErrorMessage = "Ingrese el nombre del cliente")]
+        [MinLength(3, ErrorMessage = "Ingrese mínimo 3 caracteres")]
         public string Nombre { get; set; }
 
-        //[Required(ErrorMessage = "Ingrese el telefono")]
-        //[MinLength(8, ErrorMessage = "El telefono debe ser de 8 digitos")]
-        //[MaxLength(8, ErrorMessage = "El telefono debe ser de 8 digitos")]
+        [Required(ErrorMessage = "Ingrese el telefono")]
+        [MinLength(8, ErrorMessage = "El telefono debe ser de 8 digitos")]
+        [MaxLength(8, ErrorMessage = "El telefono debe ser de 8 digitos")]
         public string Telefono { get; set; }
 
-        //[Required(ErrorMessage = "Ingrese la direccion")]
-        //[MinLength(3, ErrorMessage = "Ingrese mínimo 3 caracteres")]
+        [Required(ErrorMessage = "Ingrese la direccion")]
+        [MinLength(3, ErrorMessage = "Ingrese mínimo 3 caracteres")]
         public string Direccion { get; set; }
+
+        [Required(ErrorMessage = "Ingrese un correo")]
+        [MinLength(3, ErrorMessage = "Ingrese mínimo 3 caracteres")]
         public string Correo { get; set; }
         public bool Activo { get; set; }
     }
