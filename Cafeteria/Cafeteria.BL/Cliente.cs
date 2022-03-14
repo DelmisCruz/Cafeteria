@@ -21,11 +21,11 @@ namespace Cafeteria.BL
         public string Telefono { get; set; }
 
         [Required(ErrorMessage = "Ingrese la direccion")]
-        [MinLength(3, ErrorMessage = "Ingrese mínimo 3 caracteres")]
+        [MinLength(3, ErrorMessage = "Ingrese mínimo 6 caracteres")]
         public string Direccion { get; set; }
 
         [Required(ErrorMessage = "Ingrese un correo")]
-        [MinLength(3, ErrorMessage = "Ingrese mínimo 3 caracteres")]
+        [MinLength(3, ErrorMessage = "Ingrese mínimo 8 caracteres")]
         public string Correo { get; set; }
         public bool Activo { get; set; }
     }
