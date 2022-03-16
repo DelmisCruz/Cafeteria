@@ -32,10 +32,17 @@ namespace Cafeteria.WebAdmin.Controllers
         }
 
         [HttpPost]
-        public ActionResult Crear(Cliente cliente)
+        public ActionResult Crear(Cliente cliente, HttpPostedFileBase imagen) //cambio
         {
             if (ModelState.IsValid)
             {
+                _clientesBL.GuardarCliente(cliente);
+
+                if (imagen != null) // cambio 
+                {
+                    cliente.UrlImagen = GuardarImagen(imagen);
+                }
+
                 _clientesBL.GuardarCliente(cliente);
 
                 return RedirectToAction("Index");
@@ -52,10 +59,17 @@ namespace Cafeteria.WebAdmin.Controllers
         }
 
         [HttpPost]
-        public ActionResult Editar(Cliente cliente)
+        public ActionResult Editar(Cliente cliente, HttpPostedFileBase imagen) // cambio
         {
             if (ModelState.IsValid)
             {
+                _clientesBL.GuardarCliente(cliente);
+
+                if (imagen != null) // cambio 
+                {
+                    cliente.UrlImagen = GuardarImagen(imagen);
+                }
+
                 _clientesBL.GuardarCliente(cliente);
 
                 return RedirectToAction("Index");
@@ -84,6 +98,14 @@ namespace Cafeteria.WebAdmin.Controllers
             _clientesBL.EliminarCliente(cliente.Id);
 
             return RedirectToAction("Index");
+        }
+
+        private string GuardarImagen(HttpPostedFileBase imagen) //Cambio 
+        {
+            string path = Server.MapPath("~/Imagenes1/" + imagen.FileName);
+            imagen.SaveAs(path);
+
+            return "/Imagenes1/" + imagen.FileName;
         }
     }
 

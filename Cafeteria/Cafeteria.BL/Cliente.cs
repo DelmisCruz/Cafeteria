@@ -27,6 +27,10 @@ namespace Cafeteria.BL
         [Required(ErrorMessage = "Ingrese un correo")]
         [MinLength(3, ErrorMessage = "Ingrese mínimo 8 caracteres")]
         public string Correo { get; set; }
+
+        [Display(Name = "Foto")] //cambio
+        public string UrlImagen { get; set; }
+
         public bool Activo { get; set; }
     }
 }

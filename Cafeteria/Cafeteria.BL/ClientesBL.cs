@@ -38,6 +38,7 @@ namespace Cafeteria.BL
                 clienteExistente.Telefono = cliente.Telefono;
                 clienteExistente.Direccion = cliente.Direccion;
                 clienteExistente.Correo = cliente.Correo;
+                clienteExistente.UrlImagen = cliente.UrlImagen;//cambio
                 clienteExistente.Activo = cliente.Activo;
             }
 
