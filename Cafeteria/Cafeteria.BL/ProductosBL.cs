@@ -21,6 +21,19 @@ namespace Cafeteria.BL
         {
             ListadeProductos = _contexto.Productos
                 .Include("Categoria")
+                .OrderBy(p => p.Categoria.Descripcion)
+                .ThenBy(p => p.Descripcion)
+                .ToList();
+
+            return ListadeProductos;
+        }
+
+        public List<Producto> ObtenerProductosActivos()
+        {
+            ListadeProductos = _contexto.Productos
+                .Include("Categoria")
+                .Where(p => p.Activo == true)
+                .OrderBy(p => p.Descripcion)
                 .ToList();
 
             return ListadeProductos;

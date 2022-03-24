@@ -19,7 +19,19 @@ namespace Cafeteria.BL
 
         public List<Cliente> ObtenerClientes()
         {
-            ListadeClientes = _contexto.Clientes.ToList();
+            ListadeClientes = _contexto.Clientes
+                .OrderBy(p => p.Nombre)
+                .ToList();
+
+            return ListadeClientes;
+        }
+
+        public List<Cliente> ObtenerClientesActivos()
+        {
+            ListadeClientes = _contexto.Clientes
+                .Where(p => p.Activo == true)
+                .OrderBy(p => p.Nombre)
+                .ToList();
 
             return ListadeClientes;
         }
