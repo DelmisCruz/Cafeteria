@@ -1,0 +1,77 @@
+﻿@model List<Cafeteria.BL.Producto>
+@{
+    ViewBag.Title = "Inicio";
+}
+
+<section class="bg-5 h-500x main-slider pos-relative">
+    <div class="triangle-up pos-bottom"></div>
+    <div class="container h-100">
+        <div class="dplay-tbl">
+            <div class="dplay-tbl-cell center-text color-white pt-90">
+                <h5><b>LO MEJOR DE NUESTRA CASA</b></h5>
+                <h2 class="mt-30 mb-15">Menú</h2>
+            </div><!-- dplay-tbl-cell -->
+        </div><!-- dplay-tbl -->
+    </div><!-- container -->
+</section>
+
+<section class="story-area left-text center-sm-text">
+    <div class="container">
+        <div class="heading"><h3>Escoje uno de nuestros sabores</h3></div>
+        <div class="row">
+
+        @foreach (var producto in Model
+                    .Where(r => r.Categoria.Descripcion == "POSTRES")
+                    .Take(4)
+                    .OrderBy(r => Guid.NewGuid()) //Cada vez que actualice la lista cambia de orden.
+                    )
+        {
+            <div class="col-lg-3 col-md-4  col-sm-6 ">
+                <div class="center-text mb-30">
+                    <div class="ïmg-200x mlr-auto pos-relative">
+                        <h6 class="ribbon-cont color-white"><div class="ribbon primary"></div><b>OFERTA</b></h6>
+                        <img src="@(ViewBag.adminWebsiteUrl + producto.UrlImagen)" alt="">
+                    </div>
+                <br />
+                    <h5 class="mt-20">@producto.Descripcion</h5>
+                    <h4 class="mt-5 color-primary"><b>Lps. @producto.Precio</b></h4>
+                </div><!--text-center-->
+            </div><!-- col-md-3 -->
+        }
+        </div><!-- row-->
+    </div><!-- container -->
+</section>
+
+<section class="story-area bg-seller color-white pos-relative">
+    <div class="pos-bottom triangle-up"></div>
+    <div class="pos-top triangle-bottom"></div>
+    <div class="container">
+        <h4 class="font-30 font-sm-20  center-text mb-25">Agregar una <b>bebida</b> a tu orden</h4>
+    </div><!-- container -->
+</section>
+
+
+<section class="bg-lite-blue">
+    <div class="container">
+        <div class="row">
+            @foreach (var producto in Model.Where(r => r.Categoria.Descripcion == "BEBIDAS"))
+            {
+                <div class="col-md-6">
+                    <div class="sided-90x mb-30 ">
+                        <div class="s-left"><img class="br-3" src="@(ViewBag.adminWebsiteUrl + producto.UrlImagen)" alt="Menu Image"></div><!--s-left-->
+                        <div class="s-right">
+                            <h5 class="mb-10"><b>@producto.Descripcion</b><b class="color-primary float-right">L @producto.Precio</b></h5>
+                            <p class="pr-70"></p>
+                        </div><!--s-right-->
+                    </div><!-- sided-90x -->
+                </div><!-- food-menu -->
+            }
+        </div><!-- row -->
+    </div><!-- container -->
+</section>
+
+
+
+
+
+
