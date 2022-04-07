@@ -6,7 +6,8 @@ using System.Web;
 using System.Web.Mvc;
 
 namespace Cafeteria.WebAdmin.Controllers
-{ 
+{
+    [Authorize]
     public class OrdenesController : Controller
     {
         OrdenesBL _ordenesBL;
