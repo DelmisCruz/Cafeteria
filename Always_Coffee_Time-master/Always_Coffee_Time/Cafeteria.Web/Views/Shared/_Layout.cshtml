@@ -1,77 +1,146 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
     <title>AlwaysCoffeeTime</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="UTF-8">
-    <!-- Font -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
-    <link rel="stylesheet" href="~/fonts/beyond_the_mountains-webfont.css" type="text/css" />
-    <!-- Stylesheets -->
-    <link href="~/plugin-frameworks/bootstrap.min.css" rel="stylesheet">
-    <link href="~/plugin-frameworks/swiper.css" rel="stylesheet">
-    <link href="~/fonts/ionicons.css" rel="stylesheet">
-    <link href="~/common/styles.css" rel="stylesheet">
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="~/assets/img/logo-white.png" rel="icon">
+    <link href="~/assets/img/logo-white.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="~/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="~/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="~/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="~/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="~/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="~/assets/css/style.css" rel="stylesheet">
+
+    <!-- =======================================================
+    * Template Name: Restaurantly - v3.7.0
+    * Template URL: https://bootstrapmade.com/restaurantly-restaurant-template/
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
 </head>
+
 <body>
 
-    <header>
+    <!-- ======= Top Bar ======= -->
+    <div id="topbar" class="d-flex align-items-center fixed-top">
+        <div class="container d-flex justify-content-center justify-content-md-between">
+
+            <div class="contact-info d-flex align-items-center">
+                <i class="bi bi-phone d-flex align-items-center"><span>+2550-9001</span></i>
+                <i class="bi bi-phone d-flex align-items-center"><span>+2550-9000</span></i>
+                <i class="bi bi-clock d-flex align-items-center ms-4"><span> Lun-Sáb: 7:00AM - 23:00PM</span></i>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-cente">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
+            <img src="~/assets/img/logo-white.png" class="menu-img" alt="">
+            <h1 class="logo me-auto me-lg-0"><a href="#">Always Coffee Time</a></h1>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+            <nav id="navbar" class="navbar order-last order-lg-0">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="#hero">Hogar</a></li>
+                    <li><a class="nav-link scrollto" href="#about">Acerca de</a></li>
+                    <li><a class="nav-link scrollto" href="#menu">Menú</a></li>
+                    <li><a class="nav-link scrollto" href="#chefs">Equipo de Trabajo</a></li>
+                    <li><a class="nav-link scrollto" href="#contact">Contacto</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+
+        </div>
+    </header><!-- End Header -->
+
+    @RenderBody()
+
+
+
+    
+
+
+
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-info">
+                            <h3>Cafetería</h3>
+                            <p>
+                                23 Avenida, Sur Oeste, Entre 11 y 12 Calle <br>
+                                San Pedro Sula, Honduras<br><br>
+                                <strong>Teléfono:</strong> +504 9356-9165<br>
+                                <strong>Teléfono:</strong> +2550-9000<br>
+                                <strong>Teléfono:</strong> +2550-9001<br>
+                                <strong>Correo electrónico:</strong> info@coffetime.com<br>
+                            </p>
+                            <div class="social-links mt-3">
+                                <a class="twitter"><i class="bx bxl-twitter"></i></a>
+                                <a class="facebook"><i class="bx bxl-facebook"></i></a>
+                                <a class="instagram"><i class="bx bxl-instagram"></i></a>
+                                <a class="google-plus"><i class="bx bxl-skype"></i></a>
+                                <a class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    
+
+                </div>
+            </div>
+        </div>
+
         <div class="container">
-            <a class="logo" href="#"><img src="~/images/LOGO OFICIAL.png" alt="Logo"></a>
-            <div class="right-area">
-                <h6><a class="plr-20 color-white btn-fill-primary" href="#">ORDENAR: (504) 99885577</a></h6>
-            </div><!-- right-area -->
-            <a class="menu-nav-icon" data-menu="#main-menu" href="#"><i class="ion-navicon"></i></a>
-            <ul class="main-menu font-mountainsre" id="main-menu">
-                @*<li><a href="index.html">HOME</a></li>
-                <li><a href="02_about_us.html">ABOUT US</a></li>
-                <li><a href="03_menu.html">SERVICES</a></li>
-                <li><a href="04_blog.html">NEWS</a></li>
-                <li><a href="05_contact.html">CONTACT</a></li>*@
-            </ul>
-            <div class="clearfix"></div>
-        </div><!-- container -->
-    </header>
-
-   @RenderBody()
-
-    <footer class="pb-50  pt-70 pos-relative">
-        <div class="pos-top triangle-bottom"></div>
-        <div class="container-fluid">
-            <a href="index.html"><img src="~/images/logo-white.png" alt="Logo"></a>
-            <div class="pt-30">
-                <p class="underline-secondary"><b>Dirección:</b></p>
-                <p>Colonia Los Andes, Calle 11A entre 10 y 11 Avenida NO, San Pedro Sula </p>
-            </div>
-            <div class="pt-30">
-                <p class="underline-secondary mb-10"><b>Teléfono:</b></p>
-                <a href="tel:+2550 0100 ">+2550 0100 </a>
-            </div>
-            <div class="pt-30">
-                <p class="underline-secondary mb-10"><b>Correo Eléctronico:</b></p>
-                <a href="mailto:yourmail@gmail.com"> coffetime@gmail.com</a>
-            </div>
-            <ul class="icon mt-30">
-                <li><a href="#"><i class="ion-social-pinterest"></i></a></li>
-                <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                <li><a href="#"><i class="ion-social-dribbble-outline"></i></a></li>
-                <li><a href="#"><i class="ion-social-linkedin"></i></a></li>
-                <li><a href="#"><i class="ion-social-vimeo"></i></a></li>
-            </ul>
-            <p class="color-light font-9 mt-50 mt-sm-30">
+            <div class="copyright">
+                &copy; Copyright 
+                <script>document.write(new Date().getFullYear());</script> <a class="fa fa-heart-o" aria-hidden="true">AlwaysCoffeeTime</a> Todos los derechos reservados | Hecho en VS <i class="fa fa-heart-o" aria-hidden="true"></i> por <a class="fa fa-heart-o" aria-hidden="true">ADJK</a>
                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                Copyright &copy;
-                <script>document.write(new Date().getFullYear());</script> Todos los derechos reservados | Hecho en VS <i class="fa fa-heart-o" aria-hidden="true"></i> por <a href="https://colorlib.com" target="_blank">ADJK</a>
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            </p>
-        </div><!-- container -->
-    </footer>
-    <!-- SCIPTS -->
-    <script src="~/plugin-frameworks/jquery-3.2.1.min.js"></script>
-    <script src="~/plugin-frameworks/bootstrap.min.js"></script>
-    <script src="~/plugin-frameworks/swiper.js"></script>
-    <script src="~/common/scripts.js"></script>
+                </p>
+            </div>
+           
+        </div>
+    </footer><!-- End Footer -->
+
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
 </body>
+
 </html>

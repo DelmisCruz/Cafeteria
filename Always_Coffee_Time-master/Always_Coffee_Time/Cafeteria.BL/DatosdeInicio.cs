@@ -12,8 +12,9 @@ namespace Cafeteria.BL
         protected override void Seed(Contexto contexto)
         {
             var nuevoUsuario = new Usuario();
-            nuevoUsuario.Nombre = "admin";
-            nuevoUsuario.Contrasena = Encriptar.CodificarContrasena("123");
+            nuevoUsuario.Nombre = "MariselaCruz";
+            nuevoUsuario.Contrasena = Encriptar.CodificarContrasena("12345678");
+            
 
             contexto.Usuarios.Add(nuevoUsuario);
 

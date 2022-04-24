@@ -3,101 +3,361 @@
     ViewBag.Title = "Inicio";
 }
 
-<section class="bg-5 h-500x main-slider pos-relative">
-    <div class="triangle-up pos-bottom"></div>
-    <div class="container h-100">
-        <div class="dplay-tbl">
-            <div class="dplay-tbl-cell center-text color-white pt-90">
-                <h5><b>LO MEJOR DE NUESTRA CASA</b></h5>
-                <h2 class="mt-30 mb-15">Menú</h2>
-            </div><!-- dplay-tbl-cell -->
-        </div><!-- dplay-tbl -->
-    </div><!-- container -->
-</section>
 
-<section class="story-area left-text center-sm-text">
-    <div class="container">
-        <div class="heading"><h3>Escoje uno de nuestros Deliciosos Postres</h3></div>
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex align-items-center">
+    <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
         <div class="row">
+            <div class="col-lg-8">
+                <h1>Bienvenido a <span>Always Coffee Time</span></h1>
+                <h2>¡Entregando excelentes servicios durante años!</h2>
 
-        @foreach (var producto in Model
-                    .Where(r => r.Categoria.Descripcion == "Dulce y Salado")
-                    .Take(4)
-                    .OrderBy(r => Guid.NewGuid()) //Cada vez que actualice la lista cambia de orden.
-                    )
-        {
-            <div class="col-lg-3 col-md-4  col-sm-6 ">
-                <div class="center-text mb-30">
-                    <div class="ïmg-200x mlr-auto pos-relative">
-                        <h6 class="ribbon-cont color-white">@*<div class="ribbon primary"></div><b>OFERTA</b>*@</h6>
-                        <img src="@(ViewBag.adminWebsiteUrl + producto.UrlImagen)" alt="">
+                <div class="btns">
+                    <a href="#menu" class="btn-menu animated fadeInUp scrollto">Conoce nuestro menú</a>
+                    
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section><!-- End Hero -->
+
+
+
+<main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+        <div class="container" data-aos="fade-up">
+
+            <div class="row">
+                <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="about-img">
+                        <img src="assets/img/LOGO OFICIAL.png" alt="">
                     </div>
-                <br />
-                    <h5 class="mt-20">@producto.Descripcion</h5>
-                    <h4 class="mt-5 color-primary"><b>Lps. @producto.Precio</b></h4>
-                </div><!--text-center-->
-            </div><!-- col-md-3 -->
-        }
-        </div><!-- row-->
-    </div><!-- container -->
-</section>
+                </div>
+                <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+                    <h3>Los más dignos proporcionan placer, como si los placeres del cuerpo fueran a tomarse.</h3>
+                    <p class="fst-italic">
+                        "Coffe-Time" en el mercado sanpedrano empezando por el municipio de San Pedro Sula, a traves de estudios nos permiten conocer las preferencias de las personas que conforman nuestro mercado objetivo.
+                    </p>
+                    <ul>
+                        <li><i class="bi bi-check-circle"></i> "Coffe-Time", es una propuesta diferente en comparacion a las cafeterias actuales ya que ofrece un ambiente acogedor y calido que se asemenjara a la sala de estar de un hogar.</li>
+                        <li><i class="bi bi-check-circle"></i> Nuestros Clientes pueden disfrutar de un buen menu, leer un libro, trabajar o simplemente conversar con una excelente compañia.</li>
+                        <li>
+                            <i class="bi bi-check-circle"></i> Nuestra Cafeteria cuenta con exquisitos potres y sabores de cafes en diferentes presentaciones, bebidas calientes, frias, con los mas altos estandares de sabor y calidad que ninguna otra cafeteria podria proporcionar.
+                        </li>
+                    </ul>
+                    <p>
+                       El ambiente de este sofisticado sitio se asemenja a una sala de estar con el objetivo de darles a los clientes un hogar acogedor y calido. 
+                       Ademas contamos con una pequeña biblioteca para que los amantes de la lectura puedan sentarse y relajarse con un buen libro. Con esta iniciativa y la acogida que esperamos tener, esperamos extender nuestro negocio en el futuro a traves de la apertura de mas sucursales dentro de la ciudad. 
+                    </p>
+                </div>
+            </div>
 
-<section class="story-area bg-seller color-white pos-relative">
-    <div class="pos-bottom triangle-up"></div>
-    <div class="pos-top triangle-bottom"></div>
-    <div class="container">
-        <div class="heading"><h3>Escoje una de nuestros Deliciosas Bebidas Frias</h3></div>
-    </div><!-- container -->
-</section>
+        </div>
+    </section><!-- End About Section -->
+    <!-- ======= Why Us Section ======= -->
+    <section id="why-us" class="why-us">
+        <div class="container" data-aos="fade-up">
 
+            <div class="section-title">
+                <h2>POR QUÉ NOSOTROS</h2>
+                <p>Por qué elegir nuestra cafetería</p>
+            </div>
 
-<section class="bg-lite-blue">
-    <div class="container">
-        <div class="row">
-            @foreach (var producto in Model.Where(r => r.Categoria.Descripcion == "Bebidas Frias"))
-            {
-                <div class="col-md-6">
-                    <div class="sided-90x mb-30 ">
-                        <div class="s-left"><img class="br-3" src="@(ViewBag.adminWebsiteUrl + producto.UrlImagen)" alt="Menu Image"></div><!--s-left-->
-                        <div class="s-right">
-                            <h5 class="mb-10"><b>@producto.Descripcion</b><b class="color-primary float-right">Lps. @producto.Precio</b></h5>
-                            <p class="pr-70"></p>
-                        </div><!--s-right-->
-                    </div><!-- sided-90x -->
-                </div><!-- food-menu -->
-            }
-        </div><!-- row -->
-    </div><!-- container -->
-</section>
+            <div class="row">
 
-<section class="story-area left-text center-sm-text">
-    <div class="container">
-        <div class="heading"><h3>Escoje uno de nuestros Deliciosas Bebidas Calientes</h3></div>
-        <div class="row">
-            @foreach (var producto in Model
-                    .Where(r => r.Categoria.Descripcion == "Bebidas Calientes")
-                    .Take(4)
-                    .OrderBy(r => Guid.NewGuid()) //Cada vez que actualice la lista cambia de orden.
-                    )
-            {
-                <div class="col-lg-3 col-md-4  col-sm-6 ">
-                    <div class="center-text mb-30">
-                        <div class="ïmg-200x mlr-auto pos-relative">
-                            <h6 class="ribbon-cont color-white">@*<div class="ribbon primary"></div><b>OFERTA</b>*@</h6>
-                            <img src="@(ViewBag.adminWebsiteUrl + producto.UrlImagen)" alt="">
+                <div class="col-lg-4">
+                    <div class="box" data-aos="zoom-in" data-aos-delay="100">
+                        <span>01</span>
+                        <h4>Calidad en el servicio y atención al cliente</h4>
+                        <p>Para cada empleado de Coffe-Time la atención y servicio al cliente es parte de su día a día.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mt-4 mt-lg-0">
+                    <div class="box" data-aos="zoom-in" data-aos-delay="200">
+                        <span>02</span>
+                        <h4>Un ambiente agradable</h4>
+                        <p> La imagen de nuestra cafeteria transmite coherencia con todos los detalles, con toques especiales  haciendo el ambiente más especial, dejamos huellas en las preferencias de nuestros clientes contando con una agradable decoracion.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mt-4 mt-lg-0">
+                    <div class="box" data-aos="zoom-in" data-aos-delay="300">
+                        <span>03</span>
+                        <h4> Exquisito Menu</h4>
+                        <p>Sabores que son todo una experiencia, conectando con todas las tradiciones hondureñas de un buen cafe tradicional.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section><!-- End Why Us Section -->
+
+    <!-- ======= Menu Section ======= -->
+    <section id="menu" class="menu section-bg">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                <h2>Menú</h2>
+                <p>Echa un vistazo a nuestro delicioso menú</p>
+            </div>
+
+            <div class="row" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-12 d-flex justify-content-center">
+                    <ul id="menu-flters">
+                        <li data-filter="*" class="filter-active">Todo</li>
+                        <li data-filter=".filter-starters">Bebidas Calientes</li>
+                        <li data-filter=".filter-salads">Bebidas Frias</li>
+                        <li data-filter=".filter-specialty">Dulce y Salado</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
+
+                <div class="col-lg-6 menu-item filter-starters">
+                    @foreach (var producto in Model
+                                    .Where(r => r.Categoria.Descripcion == "Bebidas Calientes")
+                                    .Take(5)
+                                    .OrderBy(r => Guid.NewGuid()) //Cada vez que actualice la lista cambia de orden.
+                                    )
+                    {
+                        <img src="@(ViewBag.adminWebsiteUrl + producto.UrlImagen)" class="menu-img" alt="">
+                        <div class="menu-content">
+                            <a >@producto.Descripcion</a><span>Lps. @producto.Precio</span>
                         </div>
-                        <br />
-                        <h5 class="mt-20">@producto.Descripcion</h5>
-                        <h4 class="mt-5 color-primary"><b>Lps. @producto.Precio</b></h4>
-                    </div><!--text-center-->
-                </div><!-- col-md-3 -->
-            }
-        </div><!-- row-->
-    </div><!-- container -->
-</section>
+                        <div class="menu-ingredients">
+                            @producto.Existente
+                        </div>
+                    }
+                </div>
+
+               
+
+                <div class="col-lg-6 menu-item filter-salads">
+@foreach (var producto in Model
+                                            .Where(r => r.Categoria.Descripcion == "Bebidas Frias")
+                                            .Take(5)
+                                            .OrderBy(r => Guid.NewGuid()) //Cada vez que actualice la lista cambia de orden.
+                                            )
+{
+                    <img src="@(ViewBag.adminWebsiteUrl + producto.UrlImagen)" class="menu-img" alt="">
+                    <div class="menu-content">
+                        <a >@producto.Descripcion</a><span>Lps. @producto.Precio</span>
+                    </div>
+                    <div class="menu-ingredients">
+                        @producto.Existente
+                    </div>
+}
+                </div>
 
 
 
+                <div class="col-lg-6 menu-item filter-specialty">
+                    @foreach (var producto in Model
+                                    .Where(r => r.Categoria.Descripcion == "Dulce y Salado")
+                                    .Take(5)
+                                    .OrderBy(r => Guid.NewGuid()) //Cada vez que actualice la lista cambia de orden.
+                                    )
+                    {
+                        <img src="@(ViewBag.adminWebsiteUrl + producto.UrlImagen)" class="menu-img" alt="">
+                        <div class="menu-content">
+                            <a >@producto.Descripcion</a><span>Lps. @producto.Precio</span>
+                        </div>
+                        <div class="menu-ingredients">
+                            @producto.Existente
+                        </div>
+                    }
+                </div>
 
+              
 
+            </div>
+
+        </div>
+    </section><!-- End Menu Section -->
+
+    <!-- ======= Chefs Section ======= -->
+    <section id="chefs" class="chefs">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                <h2>Equipo de trabajo</h2>
+                <p>Redes Sociales</p>
+            </div>
+
+            <div class="row">
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="member" data-aos="zoom-in" data-aos-delay="100">
+                        <img src="assets/img/socios/20211220_091302_HDR.jpg" class="img-fluid" alt="">
+                        <div class="member-info">
+                            <div class="member-info-content">
+                                <h4>P. Angel L. Perdomo</h4>
+                                <span>Lic. Informática</span>
+                                <span>Diseñador Gráfico</span>
+                            </div>
+                            <div class="social">
+                                <a href="https://twitter.com/PALPDESING"><i class="bi bi-twitter"></i></a>
+                                <a href="https://www.facebook.com/PALPDESING"><i class="bi bi-facebook"></i></a>
+                                <a href="https://www.instagram.com/palpdesing/"><i class="bi bi-instagram"></i></a>
+                                <a href="https://www.linkedin.com/in/angel-perdomo/"><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="member" data-aos="zoom-in" data-aos-delay="200">
+                        <img src="assets/img/socios/Delmismg.png" class="img-fluid" alt="">
+                        <div class="member-info">
+                            <div class="member-info-content">
+                                <h4>Delmis Marisela Cruz Rosa</h4>
+                                <span>Lic. Informática</span>
+                            </div>
+                            <div class="social">
+                                @*<a href=""><i class="bi bi-twitter"></i></a>*@
+                                <a href="https://www.facebook.com/marisela.cruz.rosa"><i class="bi bi-facebook"></i></a>
+                                <a href="https://www.instagram.com/marii_rosa1/"><i class="bi bi-instagram"></i></a>
+                                @*<a href=""><i class="bi bi-linkedin"></i></a>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="member" data-aos="zoom-in" data-aos-delay="200">
+                        <img src="assets/img/socios/Karolimg.jpg" class="img-fluid" alt="">
+                        <div class="member-info">
+                            <div class="member-info-content">
+                                <h4>Karol Giselly González Castro</h4>
+                                <span>Lic. Informática</span>
+                            </div>
+                            <div class="social">
+                                @*<a href=""><i class="bi bi-twitter"></i></a>*@
+                                <a href="https://www.facebook.com/profile.php?id=100008480130236"><i class="bi bi-facebook"></i></a>
+                                <a href="https://www.instagram.com/karolgcastro21/"><i class="bi bi-instagram"></i></a>
+                                @*<a href=""><i class="bi bi-linkedin"></i></a>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="member" data-aos="zoom-in" data-aos-delay="300">
+                        <img src="assets/img/socios/Cristianimg.jpg" class="img-fluid" alt="">
+                        <div class="member-info">
+                            <div class="member-info-content">
+                                <h4>Cristian Josue Menjivar Ramos</h4>
+                                <span>Lic. Informática</span>
+                            </div>
+                            <div class="social">
+                                @*<a href=""><i class="bi bi-twitter"></i></a>*@
+                                <a href="https://www.facebook.com/cristian.ramos.353/"><i class="bi bi-facebook"></i></a>
+                                @*<a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""><i class="bi bi-linkedin"></i></a>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section><!-- End Chefs Section -->
+   
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                <h2>Contacto</h2>
+                <p>Contáctenos</p>
+            </div>
+        </div>
+
+        <div data-aos="fade-up">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3844.76390349106!2d-88.04617218514882!3d15.497126589236606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6a54704b40c7c8d!2zMTXCsDI5JzQ5LjciTiA4OMKwMDInMzguMyJX!5e0!3m2!1ses!2shn!4v1650807114274!5m2!1ses!2shn" width="1500" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <div class="container" data-aos="fade-up">
+
+            <div class="row mt-5">
+
+                <div class="col-lg-4">
+                    <div class="info">
+                        <div class="address">
+                            <i class="bi bi-geo-alt"></i>
+                            <h4>Ubicación:</h4>
+                            <p>7 23 Avenida, Sur Oeste, Entre 11 y 12 Calle, San Pedro Sula, Cortes, Honduras</p>
+                        </div>
+
+                        <div class="open-hours">
+                            <i class="bi bi-clock"></i>
+                            <h4>Horario:</h4>
+                            <p>
+                                Lunes a sábado:<br>
+                                7:00 AM - 22:00 PM
+                            </p>
+                            <p>
+                                Domingos:<br>
+                                7:00 AM - 20:00 PM
+                            </p>
+                        </div>
+
+                        <div class="email">
+                            <i class="bi bi-envelope"></i>
+                            <h4>Correo electrónico:</h4>
+                            <p>info@coffetime.com</p>
+                        </div>
+
+                        <div class="phone">
+                            <i class="bi bi-phone"></i>
+                            <h4>Llamar:</h4>
+                            <p>+2550-9000</p>
+                            <p>+2550-9001</p>
+                            <p>+504 9356-9165</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-8 mt-5 mt-lg-0">
+
+                    <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Te llamas" required>
+                            </div>
+                            <div class="col-md-6 form-group mt-3 mt-md-0">
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Tu correo electrónico" required>
+                            </div>
+                        </div>
+                        <div class="form-group mt-3">
+                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Asunto" required>
+                        </div>
+                        <div class="form-group mt-3">
+                            <textarea class="form-control" name="message" rows="8" placeholder="Mensaje" required></textarea>
+                        </div>
+                        <div class="my-3">
+                            <div class="loading">Cargando</div>
+                            <div class="error-message"></div>
+                            <div class="sent-message">Tu mensaje ha sido enviado. ¡Gracias!</div>
+                        </div>
+                        <div class="text-center"><button type="submit">Enviar mensaje</button></div>
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section><!-- End Contact Section -->
+
+</main><!-- End #main -->
 
