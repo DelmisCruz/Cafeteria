@@ -18,8 +18,8 @@ namespace Cafeteria.BL
 
         [Display(Name = "Descripcion")]
         [Required(ErrorMessage = "Ingrese una Descripcion")]
-        [MinLength(4, ErrorMessage = "Ingrese un minimo de 3 caracteres")]
-        [MaxLength(20, ErrorMessage = "Ingrese un maximo de 30 caracteres")]
+        [MinLength(3, ErrorMessage = "Ingrese un minimo de 3 caracteres")]
+        [MaxLength(30, ErrorMessage = "Ingrese un maximo de 30 caracteres")]
         public string Descripcion { get; set; }
 
         [Required(ErrorMessage = "Ingrese un Precio")]
